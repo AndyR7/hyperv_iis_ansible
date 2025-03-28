@@ -2,44 +2,50 @@
 Building IIS in Hyper-V with Ansible extras
 
 # Instructions
-Grab the 2025 ISO
-Mount it
-Make a new directory
+1. Grab the 2025 ISO
+2. Mount it
+3. Make a new directory
+4. Copy the contents of the ISO + unattend.xml to that new directory
+5. Create a new iso  
 
-Copy the contents of the ISO + unattend.xml to that new directory
-Create a new iso
+**Note: UEFI (Gen2 VMs in Hyper-V) + efisys_noprompt.bin skips the “Press any key to boot from CD/DVD...” promp +-udfver102**
 
 # Tools
-Hyper-V
-Powershell 7
-Windows2025 ISO
-Microsoft ADK (to create iso)
-WSL
-Python
-PyWinrm
-Ansible
+Hyper-V  
+Powershell 7  
+Windows2025 ISO  
+Microsoft ADK (to create iso)  
+WSL  
+Python  
+PyWinrm  
+Ansible  
 
 # Completed
-Create an unattend.xml with a user/pass for autologin
-powershell script to automate
-1. Create an internal network in Hyper-V
-2. Create VMSs in Hyper-V
-2. Mount ISO to VMs
-3. Set ISO to boot
-4. User prompt to proceed with rest of the setups
-    **Might require a revisit... this is still slow/manual**
+- Create an unattend.xml  
+- Create VMS in Hyper-V  
+- Mount ISO to VMs  
+- Set ISO to boot  
+- Enable WinRM and SSH  
+
 
 # In Progress
 
-**Generic**
-1. Ensure Ansible User is created and in Adninistrators Group
-2. Enable WinRm
-3. Enable SSH
-4. WinGet Goodies, dotnet, notepad, windirstat, etc
-5. ...
+**Generic** // **Ansible**
+- Ensure Ansible User is created and in Adninistrators Group
+- Hostnames  
+- Set IPs to static
+- Connect to VMs via WinRM and/or SSH 
+- Use Winget to install apps
+    - Powershell 7  
+    - dotnet 8/9  
+    - 7-Zip  
+    - Notepad ++  
+    - Git  
+    - Sysinternal 
+- Install IIS  
+- Setup IIS  
+- Setup a site  
+- Deploy some code  
 
-**Ansible**
-1. Connect to VMs via BASIC
-2. Install IIS
-3. Setup a site
-4. ...
+
+- ...  
